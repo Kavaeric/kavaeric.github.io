@@ -1,2 +1,2 @@
-# kavaeric
-Personal website of Kavaeric
+# kavaeric.github.io
+Personal website of Kavaeric.
