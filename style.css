@@ -1,0 +1,68 @@
+/* style.css */
+
+/* Font import */
+@font-face {
+    font-family: 'HK Grotesk';
+    src: url(fonts/HKGroteskPro-ExtraLight.woff2) format('woff2');
+    font-weight: 200;
+}
+@font-face {
+    font-family: 'HK Grotesk';
+    src: url(fonts/HKGroteskPro-Light.woff2) format('woff2');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'HK Grotesk';
+    src: url(fonts/HKGroteskPro-Medium.woff2) format('woff2');
+    font-weight: 500;
+}
+
+/* Style rules */
+body {
+    background-color: #000;
+
+    color: #fff;
+    font-size: 1em;
+    font-family: 'HK Grotesk', sans-serif;
+}
+
+#headerBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url('img/skyline.jpg');
+    background-size: cover;
+    background-position: 0;
+    background-attachment: fixed;
+
+    z-index: -10;
+}
+
+#headerStrip {
+    position: absolute;
+    top: 0;
+    left: 5vw;
+    width: 22vw;
+    height: 100vh;
+    padding: 5vw;
+    box-sizing: border-box;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/skylineb.jpg');
+    background-size: cover;
+    background-position: 0;
+    background-attachment: fixed;
+
+    font-size: 2.5em;
+    font-weight: 200;
+}
+
+#headerStrip > img {
+    height: auto;
+    max-width: 100%;
+}
+#headerStrip > img:first-child {
+    margin-bottom: 1em;
+}
