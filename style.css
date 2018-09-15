@@ -19,12 +19,19 @@
 
 /* Style rules */
 body {
+    margin: 0;
+    padding: 0;
+
     background-color: #222;
 
     color: #fff;
     font-size: 1.2em;
     font-family: 'HK Grotesk', sans-serif;
     font-weight: 300;
+}
+
+h1 {
+    margin-top: 0;
 }
 
 div.section {
@@ -34,43 +41,97 @@ div.section {
     grid-template-areas: "lmargin strip content rmargin";
 }
 
+div.pageContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
 div.header {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100vh;
+    height: 70vh;
+    margin: 0;
+    padding: 0;
 
     background-image: url('img/skyline.jpg');
-    background-size: cover;
-    background-position: 0;
-    background-attachment: fixed;
+}
+
+@media only screen and (max-width: 1500px) {
+    body {
+        font-size: 1.1em;
+    }
+
+    div.section {
+        grid-template-columns: 2% 30% 66% 2%;
+        grid-template-areas: "lmargin strip content rmargin";
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        font-size: 1em;
+    }
+
+    div.section {
+        grid-template-columns: 33% 67%;
+        grid-template-areas: "strip content";
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    body {
+        font-size: 0.9em;
+    }
+
+    div.section {
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "strip"
+                             "content";
+    }
+
+    div.section.header {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100%;
+        grid-template-areas: "strip content";
+    }
 }
 
 div.header > div.headerStrip {
     grid-area: strip;
     height: 100%;
     width: 100%;
-    padding: 5vw;
+    padding: 0 20%;
     box-sizing: border-box;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/skylineb.jpg');
+}
+
+div.header,
+div.header > div.headerStrip {
     background-size: cover;
-    background-position: 0;
+    background-position-x: center;
+    background-position-y: 150%;
     background-attachment: fixed;
-
-    font-weight: 200;
 }
 
-div.header > div.headerStrip > .nameblock {
-    margin-bottom: 1em;
+@media only screen and (max-width: 640px) {
+    div.header,
+    div.header > div.headerStrip {
+        background-position-x: 40%
+    }
 }
 
-div.header > div.headerStrip > .nameblock > img {
+div.header > div.headerStrip > img {
     height: auto;
-    max-width: 100%;
+    width: 100%;
 }
-div.header > div.headerStrip > .nameblock > img {
+div.header > div.headerStrip > img {
     margin-bottom: 1em;
 }
 
@@ -100,25 +161,134 @@ div.header > div.headerStrip > a.button:focus {
 }
 
 div.about {
-    position: absolute;
-    top: 100vh;
-    left: 0;
     width: 100%;
-    height: 100vh;
-
-    display: grid;
-    grid-template-columns: 5% 25% 65% 5%;
-    grid-template-rows: 100%;
-    grid-template-areas: "lmargin strip content rmargin";
+    min-height: 50vh;
 }
 
-div.about > div.aboutstrip {
+div.about > div.aboutStrip {
     grid-area: strip;
-    padding: 2vw;
+    height: 100%;
+    width: 100%;
+    padding: 2em;
     box-sizing: border-box;
 
     line-height: 1.6em;
 
     color: #222;
     background: #eee;
+}
+@media only screen and (min-width: 1200px) {
+    div.about > div.aboutStrip {
+        padding-bottom: 6em;
+    }
+}
+
+div.about > div.aboutContent {
+    grid-area: content;
+    height: 100%;
+    width: 100%;
+    padding: 2em;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+div.about > div.aboutContent > div.aboutLinks {
+    width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    grid-auto-rows: 5em;
+    grid-gap: 1em;
+}
+
+div.about > div.aboutContent a.button {
+    height: 100%;
+    width: 100%;
+    padding: .4em 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+
+    display: flex;
+    
+    border: 1.5px solid #fff;
+
+    color: #fff;
+    font-size: 1.8em;
+    text-align: center;
+    text-decoration: none;
+
+    background-color: rgba(255, 255, 255, 0);
+    background-size: 1em;
+    background-position: 1em center;
+    background-repeat: no-repeat;
+
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s;
+}
+
+div.about > div.aboutContent a.button img {
+    display: block;
+    height: 1em;
+    margin: 0 1em;
+}
+
+div.about > div.aboutContent a.button:hover,
+div.about > div.aboutContent a.button:focus {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+@media only screen and (max-width: 1200px) {
+    div.about > div.aboutContent > div.aboutLinks {
+        grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+    }
+
+    div.about > div.aboutContent a.button {
+        font-size: 1.5em;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    div.about > div.aboutContent > div.aboutLinks {
+        grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
+    }
+
+    div.about > div.aboutContent a.button {
+        background-position: center;
+        padding: 0;
+    }
+    div.about > div.aboutContent a.button span {
+        display: none;
+    }
+
+    div.about > div.aboutContent a.button img {
+        display: block;
+        height: 1em;
+        margin: 1em;
+    }
+}
+
+a.button#ArtStation {
+    background-image: url("/svg/icon_artstation.svg");
+}
+a.button#Twitter {
+    background-image: url("/svg/icon_twitter.svg");
+}
+a.button#Weasyl {
+    background-image: url("/svg/icon_weasyl.svg");
+}
+a.button#FurAffinity {
+    background-image: url("/svg/icon_fa.svg");
+}
+a.button#Mastodon {
+    background-image: url("/svg/icon_masto.svg");
+}
+a.button#Instagram {
+    background-image: url("/svg/icon_insta.svg");
+}
+a.button#Patreon {
+    background-image: url("/svg/icon_patreon.svg");
 }
