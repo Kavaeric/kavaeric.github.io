@@ -31,12 +31,9 @@ body {
 }
 
 h1 {
+    margin-top: 0;
     font-weight: 400;
 }
-h1:first-of-type {
-    margin-top: 0;
-}
-
 div.section {
     display: grid;
     grid-template-columns: 5% 25% 65% 5%;
@@ -199,8 +196,10 @@ div.about > div.aboutContent {
 
 div.about > div.aboutContent > div.aboutLinks {
     width: 100%;
-    flex-grow: 1;
+    margin-bottom: 1em;
     box-sizing: border-box;
+    
+    flex-grow: 1;
     
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
@@ -265,9 +264,10 @@ div.about > div.aboutContent a.button:active {
     div.about > div.aboutContent a.button {
         background-position: center;
         padding: 0;
+        opacity: 1; /* They'll likely be on a phone and so there won't be any hover effects */
     }
     div.about > div.aboutContent a.button span {
-        display: none;
+        display: none; /* Turn them into icon-only tiles */
     }
 
     div.about > div.aboutContent a.button img {
