@@ -18,6 +18,15 @@
 }
 
 /* Style rules */
+html {
+    scroll-behavior: smooth;
+    /* Note this will not work in basically anything that's not Firefox 38+, Chome 61+, and Opera 48+ */
+}
+
+/* Mobile-first design ruleset */
+/* Having the "normal" ruleset first and using media queries for larger screens means */
+/* faster loading times on mobile; especially important when on slower WiFi or mobile */
+/* data connections. min-width is used instead of max-width */
 body {
     margin: 0;
     padding: 0;
@@ -25,20 +34,9 @@ body {
     background-color: #222;
 
     color: #fff;
-    font-size: 1.2em;
+    font-size: 0.9em;
     font-family: 'HK Grotesk', sans-serif;
     font-weight: 300;
-}
-
-h1 {
-    margin-top: 0;
-    font-weight: 400;
-}
-div.section {
-    display: grid;
-    grid-template-columns: 5% 25% 65% 5%;
-    grid-template-rows: 100%;
-    grid-template-areas: "lmargin strip content rmargin";
 }
 
 div.pageContainer {
@@ -50,52 +48,17 @@ div.pageContainer {
 
 div.header {
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
 
-    background-image: url('img/skyline.jpg');
-}
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-rows: 100%;
+    grid-template-areas: "strip content";
 
-@media only screen and (max-width: 1500px) {
-    body {
-        font-size: 1.1em;
-    }
-
-    div.section {
-        grid-template-columns: 2% 30% 66% 2%;
-        grid-template-areas: "lmargin strip content rmargin";
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    body {
-        font-size: 1em;
-    }
-
-    div.section {
-        grid-template-columns: 33% 67%;
-        grid-template-areas: "strip content";
-    }
-}
-
-@media only screen and (max-width: 640px) {
-    body {
-        font-size: 0.9em;
-    }
-
-    div.section {
-        grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
-        grid-template-areas: "strip"
-                             "content";
-    }
-
-    div.section.header {
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 100%;
-        grid-template-areas: "strip content";
-    }
+    /* Use smaller images to save on load time */
+    background-image: url('img/skyline_sm.jpg');
 }
 
 div.header > div.headerStrip {
@@ -109,22 +72,15 @@ div.header > div.headerStrip {
     flex-direction: column;
     justify-content: center;
 
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/skylineb.jpg');
+    /* Smaller image for load time */
+    background-image: url('img/skylineb_sm.jpg');
 }
 
 div.header,
 div.header > div.headerStrip {
     background-size: cover;
-    background-position-x: center;
-    background-position-y: 150%;
+    background-position-x: 40%; /* The background image needs to be offset to the right due to the 1:1 layout */
     background-attachment: fixed;
-}
-
-@media only screen and (max-width: 640px) {
-    div.header,
-    div.header > div.headerStrip {
-        background-position-x: 40%
-    }
 }
 
 div.header > div.headerStrip > img {
@@ -138,14 +94,15 @@ div.header > div.headerStrip > img {
 div.header > div.headerStrip > a.button {
     display: block;
     width: 100%;
-    margin: 1em 0;
+    margin: .5em 0;
     padding: .4em 0;
     box-sizing: border-box;
     
-    border: 1.5px solid #fff;
+    border: 2px solid #000;
 
-    color: #fff;
+    color: #000;
     font-size: 1.2em;
+    font-weight: 400;
     text-align: center;
     text-decoration: none;
 
@@ -157,123 +114,255 @@ div.header > div.headerStrip > a.button {
 
 div.header > div.headerStrip > a.button:hover,
 div.header > div.headerStrip > a.button:focus {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-div.about {
-    width: 100%;
-    min-height: 50vh;
-}
+@media only screen and (min-width: 640px) {
+    body {
+        font-size: 1em;
+    }
 
-div.about > div.aboutStrip {
-    grid-area: strip;
-    height: 100%;
-    width: 100%;
-    padding: 2em;
-    box-sizing: border-box;
+    /* On larger screnes, we can give more space to the right side content */
+    div.header {
+        grid-template-columns: 40% auto;
+        grid-template-areas: "strip content";
+        
+        /* Use larger images on larger screens */
+        background-image: url('img/skyline.jpg');
+    }
 
-    line-height: 1.6em;
-
-    color: #222;
-    background: #eee;
-}
-@media only screen and (min-width: 1200px) {
-    div.about > div.aboutStrip {
-        padding-bottom: 6em;
+    div.header > div.headerStrip {
+        background-image: url('img/skylineb.jpg');
     }
 }
 
-div.about > div.aboutContent {
-    grid-area: content;
-    height: 100%;
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 1.1em;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    body {
+        font-size: 1.2em;
+    }
+
+    /* At desktop sizes we can add margins */
+    div.header {
+        grid-template-columns: 3em 25em auto 4em;
+        grid-template-rows: 100vh;
+        grid-template-areas: "lmargin strip content rmargin";
+    }
+    
+    div.header,
+    div.header > div.headerStrip {
+        background-position: center center; /* The background image can be centred */
+    }
+}
+
+/* Main page content */
+h1 {
+    font-weight: 400;
+    margin-bottom: 0;
+}
+h1:first-child {
+    margin-top: 0;
+}
+
+h2 {
+    font-weight: 400;
+    margin-bottom: .25em;
+}
+h2:first-child {
+    margin-top: 0;
+}
+
+
+/* On phone screens, the columns are lost in favour for a single column of content */
+div.contentContainer {
     width: 100%;
-    padding: 2em;
     box-sizing: border-box;
 
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+div.strip {
+    height: 100%;
+    margin: 0;
+    padding: 2em;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    line-height: 1.6em;
+}
+
+div.sectionContent {
+    width: 100%;
+    padding: 0 2em 1em 2em;
+
+    box-sizing: border-box;
+    
     display: flex;
     flex-direction: column;
 }
 
-div.about > div.aboutContent > div.aboutLinks {
+div.sectionContent h2 {
+    opacity: 0.5;
+}
+
+/* Columns are available at larger screen sizes */
+@media only screen and (min-width: 640px) {
+    div.contentContainer {
+        grid-template-columns: 40% auto;
+    }
+
+    div.strip {
+        padding: 2em;
+        color: #222;
+        background: #eee;
+    }
+
+    div.sectionContent {
+        padding: 2em;
+    }
+}
+
+/* Margins are available on desktop sizes */
+@media only screen and (min-width: 1280px) {
+    div.contentContainer {
+        grid-template-columns: 28em auto;
+    }
+
+    div.strip {
+        padding-bottom: 3em;
+        margin: 0 0 0 3em;
+    }
+}
+
+/* Only apply this to the actual link buttons */
+div.linkGrid {
     width: 100%;
-    margin-bottom: 1em;
     box-sizing: border-box;
-    
-    flex-grow: 1;
-    
+
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
     grid-auto-rows: 4em;
     grid-gap: 1em;
 }
 
-div.about > div.aboutContent a.button {
+div.linkGrid .button {
+    padding: 0;
+    border: 2px solid rgba(255, 255, 255, .3);
+    grid-row: span 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: #fff;
+    font-size: 1.1em;
+    background-size: 1.5em;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+    text-decoration: none;
+    opacity: 1; /* They'll likely be on a phone and so there won't be any hover effects */
+}
+div.linkGrid .button span {
+    display: none; /* Turn them into icon-only tiles */
+}
+
+div.linkGrid.large {
+    grid-template-columns: 100%;  /* Ensure the grid buttons don't overflow */
+    grid-auto-rows: 3em;          /* The larger grids can show text on small screens - however their heights should be reduced to reduce scrolling */
+}
+div.linkGrid.large .button {
     height: 100%;
     width: 100%;
     padding: .4em 0;
     box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
 
-    display: flex;
-    
-    border: 1.5px solid #fff;
-
-    color: #fff;
-    font-size: 1.8em;
-    text-align: center;
-    text-decoration: none;
-
-    opacity: .5;
-    background-color: rgba(255, 255, 255, 0);
     background-size: 1em;
     background-position: .75em center;
-    background-repeat: no-repeat;
+}
+div.linkGrid.large .button span {
+    display: initial;
 }
 
-div.about > div.aboutContent a.button img {
-    display: block;
-    height: 1em;
-    margin: 0 1em;
-}
-
-div.about > div.aboutContent a.button:hover,
-div.about > div.aboutContent a.button:focus {
-    background-color: rgba(255, 255, 255, .1);
+div.linkGrid .button:hover,
+div.linkGrid .button:focus {
     opacity: 1;
 }
 
-div.about > div.aboutContent a.button:active {
+div.linkGrid a.button:hover,
+div.linkGrid a.button:focus {
+    background-color: rgba(255, 255, 255, .1);
+    border-color: rgba(255, 255, 255, .8);
+}
+
+div.linkGrid a.button:active {
     background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 1);
 }
 
-@media only screen and (max-width: 1200px) {
-    div.about > div.aboutContent > div.aboutLinks {
-        grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+/* Switch to large buttons with labels */
+@media only screen and (min-width: 640px) {
+    div.linkGrid {
+        grid-template-columns: repeat(auto-fill, minmax(11em, 1fr));
+        grid-auto-rows: 3em;
     }
 
-    div.about > div.aboutContent a.button {
-        font-size: 1.5em;
+    div.linkGrid .button {
+        font-size: 1.1em;
+
+        background-color: rgba(255, 255, 255, 0);
+        background-size: 1em;
+        background-position: .75em center;
+    }
+    
+    div.linkGrid .button span {
+        display: initial;
+    }
+
+    div.linkGrid .button.wide {
+        grid-column: span 2;
+    }
+
+    div.linkGrid.large {
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+        grid-auto-rows: 4em;
     }
 }
-@media only screen and (max-width: 1000px) {
-    div.about > div.aboutContent > div.aboutLinks {
-        grid-template-columns: repeat(auto-fill, minmax(6em, 1fr));
+
+@media only screen and (min-width: 1280px) {
+    div.linkGrid {
+        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+        grid-auto-rows: 3.5em;
     }
 
-    div.about > div.aboutContent a.button {
-        background-position: center;
-        padding: 0;
-        opacity: 1; /* They'll likely be on a phone and so there won't be any hover effects */
-    }
-    div.about > div.aboutContent a.button span {
-        display: none; /* Turn them into icon-only tiles */
+    div.linkGrid .button {
+        font-size: 1.3em;
+        opacity: .8;
     }
 
-    div.about > div.aboutContent a.button img {
-        display: block;
-        height: 1em;
-        margin: 1em;
+    div.linkGrid.large {
+        grid-auto-rows: 4.5em;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    div.linkGrid {
+        grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+        grid-auto-rows: 4em;
+    }
+
+    div.linkGrid .button {
+        font-size: 1.4em;
+    }
+
+    div.linkGrid.large {
+        grid-auto-rows: 5em;
     }
 }
 
@@ -312,4 +401,44 @@ a.button#Tumblr {
 }
 a.button#Telegram {
     background-image: url("/svg/icon_telegram.svg");
+}
+a.button#Email {
+    background-image: url("/svg/icon_email.svg");
+}
+a.button#Kofi {
+    background-image: url("/svg/icon_kofi.svg");
+}
+div.button#Discord {
+    background-image: url("/svg/icon_discord.svg")
+}
+div.button#Discord span:first-child {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+div.button#Discord span:nth-child(2) {
+    -webkit-user-select: all;
+    -ms-user-select: all;
+    -moz-user-select: all;
+    user-select: all;
+}
+
+div.strip.footer {
+    display: none;
+    height: 15em;
+    background: linear-gradient(-15deg, rgba(238,238,238,0) 60%, rgba(238,238,238,1) 60%);
+}
+div.sectionContent.footer {
+    justify-content: end;
+    text-align: right;
+}
+div.sectionContent.footer p {
+    margin: 0;
+}
+
+@media only screen and (min-width: 640px) {
+    div.strip.footer {
+        display: initial;
+    }
 }
