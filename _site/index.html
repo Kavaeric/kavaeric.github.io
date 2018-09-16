@@ -7,12 +7,17 @@
     <title>Kavaeric</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="images.css">
+
+    <!-- I've avoided JavaScript for this long, but... -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </head>
 
-<body>
+<body class="background knowing">
     <div class="pageContainer">
-        <div class="header" id="header">
-            <div class="headerStrip">
+        <div class="header background knowing" id="header">
+            <div class="headerStrip background knowing">
                 <img src="svg/emblem.svg">
                 <img src="svg/name_jp.svg">
                 <img src="svg/name_en.svg">
@@ -20,6 +25,14 @@
                 <a href="#about" class="button">About</a>
                 <a href="#contact" class="button">Contact</a>
                 <a href="#comms" class="button">Commissions</a>
+
+                <div class="headerButtons" id="headerButtons">
+                    <a href="http://" class="button" id="knowing"></a>
+                    <a href="http://" class="button" id="ascend"></a>
+                    <a href="http://" class="button" id="vancouver"></a>
+                    <a href="http://" class="button" id="content"></a>
+                </div>
+                <p id="headerText"></p>
             </div>
         </div>
 
@@ -35,7 +48,7 @@
             <div class="sectionContent">
                 <h2>Portfolio sites</h2>
                 <div class="linkGrid">
-                    <a target="blank" class="button wide" href="https://kavaeric.artstation.com/" id="ArtStation"><span>ArtStation</span></a>
+                    <a target="blank" class="button" href="https://kavaeric.artstation.com/" id="ArtStation"><span>ArtStation</span></a>
                     <a target="blank" class="button" href="https://www.weasyl.com/~kavaeric" id="Weasyl"><span>Weasyl</span></a>
                     <a target="blank" class="button" href="https://www.furaffinity.net/user/kavaeric/" id="FurAffinity"><span>FurAffinity</span></a>
                     <a target="blank" class="button" href="https://beta.furrynetwork.com/kav/" id="FurryNetwork"><span>FurryNetwork</span></a>
@@ -52,7 +65,7 @@
                 
                 <h2>Support</h2>
                 <div class="linkGrid">
-                    <a target="blank" class="button wide" href="https://www.redbubble.com/people/kavaeric" id="RedBubble"><span>RedBubble</span></a>
+                    <a target="blank" class="button" href="https://www.redbubble.com/people/kavaeric" id="RedBubble"><span>RedBubble</span></a>
                     <a target="blank" class="button" href="https://www.patreon.com/kav" id="Patreon"><span>Patreon</span></a>
                     <a target="blank" class="button" href="https://ko-fi.com/kavaeric" id="Kofi"><span>Ko-Fi</span></a>
                 </div>
@@ -79,8 +92,7 @@
 
             <div class="sectionContent">
                 <div class="linkGrid large">
-                        <a target="blank" class="button" href="https://docs.google.com/document/d/1f0_ms_LxU0-uq1LI0LtLWDE5jom35PSAgkrOehJgSf0/edit#"><span>Terms of service</span></a>
-                        <a target="blank" class="button" href="https://drive.google.com/drive/folders/1H4rP1X1ILISXGDOme0LTv8bLKtIe7C6L"><span>Past terms</span></a>
+                        <a target="blank" class="button" href="https://docs.google.com/document/d/1f0_ms_LxU0-uq1LI0LtLWDE5jom35PSAgkrOehJgSf0/edit#"><span>Commission terms of service</span></a>
                 </div>
             </div>
 

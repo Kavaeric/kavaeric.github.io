@@ -2,19 +2,19 @@
 
 /* Font import */
 @font-face {
-    font-family: 'HK Grotesk';
-    src: url(fonts/HKGroteskPro-ExtraLight.woff2) format('woff2');
-    font-weight: 200;
-}
-@font-face {
-    font-family: 'HK Grotesk';
-    src: url(fonts/HKGroteskPro-Light.woff2) format('woff2');
+    font-family: "HK Grotesk";
+    src: url(fonts/HKGroteskPro-Light.woff2) format("woff2");
     font-weight: 300;
 }
 @font-face {
-    font-family: 'HK Grotesk';
-    src: url(fonts/HKGroteskPro-Regular.woff2) format('woff2');
+    font-family: "HK Grotesk";
+    src: url(fonts/HKGroteskPro-Regular.woff2) format("woff2");
     font-weight: 400;
+}
+@font-face {
+    font-family: "HK Grotesk";
+    src: url(fonts/HKGroteskPro-Medium.woff2) format("woff2");
+    font-weight: 500;
 }
 
 /* Style rules */
@@ -30,13 +30,13 @@ html {
 body {
     margin: 0;
     padding: 0;
-
-    background-color: #222;
-
+    
     color: #fff;
     font-size: 0.9em;
-    font-family: 'HK Grotesk', sans-serif;
+    font-family: "HK Grotesk", sans-serif;
     font-weight: 300;
+    
+    background-color: #222;
 }
 
 div.pageContainer {
@@ -48,7 +48,7 @@ div.pageContainer {
 
 div.header {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 
@@ -56,65 +56,87 @@ div.header {
     grid-template-columns: 50% auto;
     grid-template-rows: 100%;
     grid-template-areas: "strip content";
-
-    /* Use smaller images to save on load time */
-    background-image: url('img/skyline_sm.jpg');
 }
 
 div.header > div.headerStrip {
     grid-area: strip;
     height: 100%;
     width: 100%;
-    padding: 0 20%;
+    padding: 2em 10%;
     box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    /* Smaller image for load time */
-    background-image: url('img/skylineb_sm.jpg');
-}
-
-div.header,
-div.header > div.headerStrip {
-    background-size: cover;
-    background-position-x: 40%; /* The background image needs to be offset to the right due to the 1:1 layout */
-    background-attachment: fixed;
+    color: #000;
+    background-color: #eee;
 }
 
 div.header > div.headerStrip > img {
     height: auto;
     width: 100%;
-}
-div.header > div.headerStrip > img {
     margin-bottom: 1em;
+}
+div.header > div.headerStrip > img:first-child {
+    margin-top: auto;
 }
 
 div.header > div.headerStrip > a.button {
     display: block;
     width: 100%;
-    margin: .5em 0;
+    margin: .2em 0;
     padding: .4em 0;
     box-sizing: border-box;
     
-    border: 2px solid #000;
+    border: 3px solid #000;
 
     color: #000;
     font-size: 1.2em;
-    font-weight: 400;
+    font-weight: 500;
     text-align: center;
     text-decoration: none;
 
     background-color: rgba(255, 255, 255, 0);
-
-    -webkit-transition: background-color .5s;
-    transition: background-color .5s;
 }
 
-div.header > div.headerStrip > a.button:hover,
-div.header > div.headerStrip > a.button:focus {
-    background-color: rgba(255, 255, 255, 0.5);
+/* Buttons to change showcase image */
+div.header > div.headerStrip > div.headerButtons {
+    width: 100%;
+    margin-top: auto;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+div.header > div.headerStrip > div.headerButtons a.button {
+    display: block;
+    height: 3em;
+    width: 3em;
+    margin: .25em 0;
+    box-sizing: border-box;
+
+    /* Backgrounds are defined in #images.css */
+    background-size: cover;
+    background-position: center center;
+
+    /* Hide these on load - when the document has loaded, the JS file will unhide them */
+    opacity: 0;
+}
+
+div.header > div.headerStrip a.button:hover,
+div.header > div.headerStrip a.button:focus {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+div.header > div.headerStrip a.button:active {
+    background-color: rgba(255, 255, 255, .5);
+}
+
+#headerText {
+    font-weight: 400;
+    text-align: center;
 }
 
 @media only screen and (min-width: 640px) {
@@ -122,17 +144,13 @@ div.header > div.headerStrip > a.button:focus {
         font-size: 1em;
     }
 
-    /* On larger screnes, we can give more space to the right side content */
     div.header {
         grid-template-columns: 40% auto;
         grid-template-areas: "strip content";
-        
-        /* Use larger images on larger screens */
-        background-image: url('img/skyline.jpg');
     }
 
     div.header > div.headerStrip {
-        background-image: url('img/skylineb.jpg');
+        padding: 2em 15%;
     }
 }
 
@@ -149,14 +167,12 @@ div.header > div.headerStrip > a.button:focus {
 
     /* At desktop sizes we can add margins */
     div.header {
-        grid-template-columns: 3em 25em auto 4em;
+        grid-template-columns: 3em 25em auto;
         grid-template-rows: 100vh;
-        grid-template-areas: "lmargin strip content rmargin";
+        grid-template-areas: "lmargin strip content";
     }
-    
-    div.header,
     div.header > div.headerStrip {
-        background-position: center center; /* The background image can be centred */
+        padding: 2em 20%;
     }
 }
 
@@ -245,7 +261,7 @@ div.linkGrid {
     box-sizing: border-box;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(5em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(5em, 6em));
     grid-auto-rows: 4em;
     grid-gap: 1em;
 }
@@ -323,10 +339,6 @@ div.linkGrid a.button:active {
     
     div.linkGrid .button span {
         display: initial;
-    }
-
-    div.linkGrid .button.wide {
-        grid-column: span 2;
     }
 
     div.linkGrid.large {
