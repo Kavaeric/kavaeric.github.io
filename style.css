@@ -76,10 +76,8 @@ div.header > div.headerStrip {
 div.header > div.headerStrip > img {
     height: auto;
     width: 100%;
-    margin-bottom: 1em;
-}
-div.header > div.headerStrip > img:first-child {
     margin-top: auto;
+    margin-bottom: 2em;
 }
 
 div.header > div.headerStrip > a.button {
@@ -105,20 +103,21 @@ div.header > div.headerStrip > div.headerButtons {
     width: 100%;
     margin-top: auto;
 
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 2.5em);
+    grid-auto-rows: 2.5em;
+    grid-gap: .1em;
+    justify-content: center;
 }
 
 div.header > div.headerStrip > div.headerButtons a.button {
     display: block;
-    height: 2.6em;
-    width: 2.6em;
-    margin: .25em 0;
+    height: 2.5em;
+    width: 2.5em;
     box-sizing: border-box;
 
     /* Backgrounds are defined in #images.css */
-    background-size: cover;
+    background-size: 250%;
     background-position: center center;
 
     /* Hide these on load - when the document has loaded, the JS file will unhide them */
@@ -210,6 +209,18 @@ div.strip {
     padding-bottom: 0;
     box-sizing: border-box;
     line-height: 1.6em;
+}
+
+#about h1 {
+    margin: .5em 0;
+    font-weight: 400;
+    text-align: center;
+}
+#about h1:first-child {
+    font-size: 2.8em;
+}
+#about h1:nth-child(2) {
+    font-size: 1.3em;
 }
 
 div.sectionContent {

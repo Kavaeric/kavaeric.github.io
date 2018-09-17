@@ -35,3 +35,20 @@
 .background.armour {
     background-position: center top;
 }
+
+.background.westminster,
+.background.kadote {
+    background-position: 60% center;
+}
+
+.background.aruarian {
+    background-position: 5% center;
+}
+
+.background.anubis {
+    background-position: 80% 25%;
+}
+
+.background.kathid {
+    background-position: 90% 35%;
+}

@@ -6,22 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Kavaeric &#8227; {{ page.title }}</title>
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!--The easiest solution to a problem is to use a solution someone else made before-->
-    <!--FancyBox modals!!-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/default.css">
 </head>
-
 <body>
     <div class="grid-container">
 
+        <h1><a href="{{ base.url }}">&#9668;</a>{{ page.title }}</h1>
         <div class="content">
-            <h1>{{ page.title }}</h1>
             {{ content }}
         </div>
 

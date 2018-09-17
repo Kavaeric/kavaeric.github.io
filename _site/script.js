@@ -12,8 +12,11 @@ var imageTitles = {
     'westminster': '"Westminster 717" 2017',
     'gate': '"Gate" 2017',
     'momentum': '"Momentum" 2016',
-    'kadote': 'Triton Kadote, 2016',
-    'armour': '"Terran Shock Armour" 2018'
+    'kadote': 'Triton Kadote model, 2016',
+    'armour': '"Terran Shock Armour" 2018',
+    'aruarian': '"Aruarian" 2016',
+    'kathid': '"Follow" 2018',
+    'anubis': '"Silence" 2018'
   };
 
 var setImage = function(clickedButton) {
