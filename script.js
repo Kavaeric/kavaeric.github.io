@@ -8,7 +8,12 @@ var imageTitles = {
     'knowing' : '"Knowing" 2017',
     'ascend' : '"Ascend" 2018',
     'vancouver' : '"Vancouver 717" 2018',
-    'content': '"Content" 2018' 
+    'content': '"Content" 2018',
+    'westminster': '"Westminster 717" 2017',
+    'gate': '"Gate" 2017',
+    'momentum': '"Momentum" 2016',
+    'kadote': 'Triton Kadote, 2016',
+    'armour': '"Terran Shock Armour" 2018'
   };
 
 var setImage = function(clickedButton) {

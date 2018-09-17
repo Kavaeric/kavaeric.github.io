@@ -31,3 +31,7 @@
 @media only screen and (min-width: 1280px) {
     .header.background.knowing { background-image: url("img/knowing.jpg"); }
 }
+
+.background.armour {
+    background-position: center top;
+}
