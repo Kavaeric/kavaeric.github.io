@@ -98,6 +98,19 @@ div.header > div.headerStrip > a.button {
     background-color: rgba(255, 255, 255, 0);
 }
 
+div.header > div.headerStrip > a.button.pageButton::after {
+    content: "\25b8";
+    top: 0;
+    left: 0;
+    margin-left: 0em;
+    
+    transition: margin-left .2s;
+}
+div.header > div.headerStrip > a.button.pageButton:hover::after,
+div.header > div.headerStrip > a.button.pageButton:focus::after {
+    margin-left: .1em;
+}
+
 /* Buttons to change showcase image */
 div.header > div.headerStrip > div.headerButtons {
     width: 100%;

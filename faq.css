@@ -1,4 +1,4 @@
-/* default.css */
+/* faq.css */
 
 h1 {
     position: fixed;
@@ -9,7 +9,7 @@ h1 {
     padding: .2em 1em;
 
     color: #222;
-    font-size: 3em;
+    font-size: 2em;
     background-color: #eee;
 
     z-index: 10;
@@ -36,7 +36,12 @@ h1 a:active {
     opacity: .5;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 640px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+@media only screen and (min-width: 1024px) {
     h1 {
         font-size: 4em;
     }
