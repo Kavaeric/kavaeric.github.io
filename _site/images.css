@@ -25,6 +25,7 @@
 }
 
 @media only screen and (min-width: 768px) {
+    .background.knowing { background-image: url("img/knowing_b.png")}
     .header.background.knowing { background-image: url("img/knowing.jpg"); }
 }
 
