@@ -3,7 +3,6 @@
 .content {
     max-width: 80em;
     margin: 0 auto;
-    padding: 4.5em 0;
 
     display: grid;
     grid-template-columns: 100%;
@@ -12,18 +11,17 @@
 @media only screen and (min-width: 768px) {
     .content {
         grid-template-columns: 60% auto;
-        grid-column-gap: 4em;
-    }
-}
-@media only screen and (min-width: 1024px) {
-    .content {
-        padding: 6.5em 0;
     }
 }
 
 div.terms {
     width: 100%;
+    box-sizing: border-box;
     padding: 2em;
+}
+
+div.terms p:first-child {
+    margin-top: 0em;
 }
 
 div.terms ol {
@@ -63,6 +61,20 @@ div.explanation {
     background-color: rgba(255, 255, 255, .1);
 }
 
+div.explanation:last-child { 
+    padding-bottom: 5em;
+}
+
 div.explanation p {
     margin: 1em 0;
+}
+
+/* Hide the "In simple terms" headers on larger screens */
+@media only screen and (min-width: 768px) {
+    div.explanation > h2 {
+        display: none;
+    }
+    div.explanation > h2.first {
+        display: inline;
+    }
 }

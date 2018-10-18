@@ -53,7 +53,7 @@ div.header {
     padding: 0;
 
     display: grid;
-    grid-template-columns: 50% auto;
+    grid-template-columns: 45% auto;
     grid-template-rows: 100%;
     grid-template-areas: "strip content";
 }
@@ -481,8 +481,6 @@ div.sectionContent.footer p {
 
 /* Images - previously part of images.css */
 
-/* images.css */
-
 .background {
     background-size: cover;
     background-position: 30% center; /* The background image needs to be offset to the right due to the 1:1 layout */
@@ -503,17 +501,17 @@ div.sectionContent.footer p {
 .background.knowing {
     background-image: url("img/knowing_smb.png");
 }
-.header.background.knowing {
+.background.sharpbackground.knowing {
     background-image: url("img/knowing_sm.jpg");
 }
 
 @media only screen and (min-width: 768px) {
     .background.knowing { background-image: url("img/knowing_b.png")}
-    .header.background.knowing { background-image: url("img/knowing.jpg"); }
+    .background.sharpbackground.knowing { background-image: url("img/knowing.jpg"); }
 }
 
 @media only screen and (min-width: 1280px) {
-    .header.background.knowing { background-image: url("img/knowing.jpg"); }
+    .background.sharpbackground.knowing { background-image: url("img/knowing.jpg"); }
 }
 
 .background.armour {

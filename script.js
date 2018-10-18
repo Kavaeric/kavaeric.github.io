@@ -47,15 +47,15 @@ $(document).ready(function() {
 
         $('<style> #' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
         +'.background.' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
-        +'.header.background.' + imageName + ' { background-image: url("img/' + imageName + '_sm.jpg"); }'
+        +'.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '_sm.jpg"); }'
         +''
         +'@media only screen and (min-width: 768px) {'
         +    '.background.' + imageName + ' { background-image: url("img/' + imageName + '_b.png"); }'
-        +    '.header.background.' + imageName + ' { background-image: url("img/' + imageName + '.jpg"); }'
+        +    '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '.jpg"); }'
         +'}'
         +''
         +'@media only screen and (min-width: 1280px) {'
-        +    '.header.background.' + imageName + ' { background-image: url("img/' + imageName + '.jpg"); }'
+        +    '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '.jpg"); }'
         +'}</style>').appendTo('head');
     });
 
