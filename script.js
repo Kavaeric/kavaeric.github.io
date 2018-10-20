@@ -61,18 +61,23 @@ $(document).ready(function() {
             return;
         }
 
-        $('<style> #' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
-        +'.background.' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
-        +'.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '_sm.jpg"); }'
-        +''
-        +'@media only screen and (min-width: 768px) {'
+        $('<style>'
+        + '@supports (background-attachment: fixed) {'
+        + '#' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
+        + '.background.' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
+        + '}'
+        + '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '_sm.jpg"); }'
+        + ''
+        + '@media only screen and (min-width: 768px) {'
+        + '@supports (background-attachment: fixed) {'
         +    '.background.' + imageName + ' { background-image: url("img/' + imageName + '_b.png"); }'
+        + '}'
         +    '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '.jpg"); }'
-        +'}'
-        +''
-        +'@media only screen and (min-width: 1280px) {'
+        + '}'
+        + ''
+        + '@media only screen and (min-width: 1280px) {'
         +    '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '.jpg"); }'
-        +'}</style>').appendTo('head');
+        + '}</style>').appendTo('head');
     });
 
     // Unhide the image selection buttons
