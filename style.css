@@ -517,18 +517,20 @@ div.sectionContent.footer p {
 /* Images - previously part of images.css */
 
 .background {
-    -webkit-background-size: cover;
     background-size: cover;
-    -webkit-background-position: 40% center; /* The background image needs to be offset to the right due to the 1:1 layout */
-    background-position: 40% center;
-    -webkit-background-attachment: fixed;
-    background-attachment: fixed;
+    background-position: 40% center; /* The background image needs to be offset to the right due to the 1:1 layout */
 }
+
+@supports (background-attachment: fixed) {
+    .background {
+        background-attachment: fixed;
+    }
+}
+
 
 @media only screen and (min-width: 1280px) {
     .background {
-        -webkit-background-position: center center; /* The background image can be centred */
-        background-position: center center; 
+        background-position: center center; /* The background image can be centred */
     }
 }
 
@@ -554,27 +556,21 @@ div.sectionContent.footer p {
 }
 
 .background.armour {
-    -webkit-background-position: center top;
     background-position: center top;
 }
 
 .background.westminster,
 .background.kadote {
-    -webkit-background-position: 75% center;
     background-position: 75% center;
 }
-
 .background.aruarian {
-    -webkit-background-position: 30% center;
+
     background-position: 30% center;
 }
-
 .background.anubis {
-    -webkit-background-position: 80% 25%;
     background-position: 80% 25%;
 }
 
-.background.kathid {
-    -webkit-background-position: 90% 35%;
+.background.kathid {    
     background-position: 90% 35%;
 }
