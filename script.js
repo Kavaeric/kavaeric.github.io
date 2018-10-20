@@ -31,9 +31,6 @@ var setImage = function(clickedButton) {
 
     // Change header text
     $('#headerText').text(imageTitles[newClass]);
-
-    // Don't follow the clicked link
-    event.preventDefault();
 };
 
 // Show/hide header sidebar

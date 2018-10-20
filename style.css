@@ -539,15 +539,20 @@ div.sectionContent.footer p {
 #knowing {
     background-image: url("img/knowing_smb.png");
 }
-.background.knowing {
-    background-image: url("img/knowing_smb.png");
+
+@supports (background-attachment: fixed) {
+    .background.knowing {
+        background-image: url("img/knowing_smb.png");
+    }
 }
 .background.sharpbackground.knowing {
     background-image: url("img/knowing_sm.jpg");
 }
 
 @media only screen and (min-width: 768px) {
-    .background.knowing { background-image: url("img/knowing_b.png")}
+    @supports (background-attachment: fixed) {
+        .background.knowing { background-image: url("img/knowing_b.png")}
+    }
     .background.sharpbackground.knowing { background-image: url("img/knowing.jpg"); }
 }
 
