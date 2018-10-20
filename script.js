@@ -59,8 +59,8 @@ $(document).ready(function() {
         }
 
         $('<style>'
-        + '@supports (background-attachment: fixed) {'
         + '#' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
+        + '@supports (background-attachment: fixed) {'
         + '.background.' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
         + '}'
         + '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '_sm.jpg"); }'
