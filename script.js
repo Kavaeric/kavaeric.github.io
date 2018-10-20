@@ -48,11 +48,6 @@ function toggleHeaderStrip() {
 
 };
 
-$(window).scroll(function() {
-    var scrolledY = $(window).scrollTop();
-    $('.background').css('background-position', 'left ' + ((scrolledY)) + 'px');
-});
-
 
 // Wait until the document is done loading
 $(document).ready(function() {
