@@ -19,6 +19,8 @@
 
 /* Style rules */
 html {
+    height: 100%;
+    min-width: 100%;
     scroll-behavior: smooth;
     /* Note this will not work in basically anything that's not Firefox 38+, Chome 61+, and Opera 48+ */
 }
@@ -28,6 +30,8 @@ html {
 /* faster loading times on mobile; especially important when on slower WiFi or mobile */
 /* data connections. min-width is used instead of max-width */
 body {
+    height: 100%;
+    min-width: 100%;
     margin: 0;
     padding: 0;
     
