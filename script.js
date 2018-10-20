@@ -31,9 +31,25 @@ var setImage = function(clickedButton) {
 
     // Change header text
     $('#headerText').text(imageTitles[newClass]);
+
+    // Don't follow the clicked link
+    event.preventDefault();
 };
 
-// Wait until the document is ready
+// Show/hide header sidebar
+function toggleHeaderStrip() {
+    if($('#headerStrip').css('display') === 'flex' ) {
+        $('#headerStrip').css('display', 'none');
+        $('#hideshow').text('\u25ba');
+    } else {
+        $('#headerStrip').css('display', 'flex');
+        $('#hideshow').text('\u2503');
+    }
+
+};
+
+
+// Wait until the document is done loading
 $(document).ready(function() {
 
     // Add styles for each of the buttons

@@ -2,3 +2,6 @@
 
 # Ignore the _site/ directory that Jekyll automatically generates
 _site/
+
+# This gets auto-generated
+Gemfile.lock
