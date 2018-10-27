@@ -519,7 +519,7 @@ div.sectionContent.footer p {
 .background {
     background-size: cover;
     background-position: 40% center; /* The background image needs to be offset to the right due to the 1:1 layout */
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
 }
 
 

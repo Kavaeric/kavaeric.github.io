@@ -75,6 +75,7 @@ $(document).ready(function() {
         } else {
             console.log("Desktop browser detected");
             $('<style>'
+            + '.background { background-attachment: fixed; }'
             + '#' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
             + '.background.' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
             + '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '_sm.jpg"); }'
