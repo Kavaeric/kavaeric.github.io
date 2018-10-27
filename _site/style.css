@@ -19,6 +19,8 @@
 
 /* Style rules */
 html {
+    height: 100%;
+    min-width: 100%;
     scroll-behavior: smooth;
     /* Note this will not work in basically anything that's not Firefox 38+, Chome 61+, and Opera 48+ */
 }
@@ -28,6 +30,8 @@ html {
 /* faster loading times on mobile; especially important when on slower WiFi or mobile */
 /* data connections. min-width is used instead of max-width */
 body {
+    height: 100%;
+    min-width: 100%;
     margin: 0;
     padding: 0;
     
@@ -513,10 +517,11 @@ div.sectionContent.footer p {
 /* Images - previously part of images.css */
 
 .background {
-    background-size: cover;
+    background-size: auto 100vh;
     background-position: 40% center; /* The background image needs to be offset to the right due to the 1:1 layout */
     background-attachment: fixed;
 }
+
 
 @media only screen and (min-width: 1280px) {
     .background {
@@ -529,8 +534,11 @@ div.sectionContent.footer p {
 #knowing {
     background-image: url("img/knowing_smb.png");
 }
-.background.knowing {
-    background-image: url("img/knowing_smb.png");
+
+@supports (background-attachment: fixed) {
+    .background.knowing {
+        background-image: url("img/knowing_smb.png");
+    }
 }
 .background.sharpbackground.knowing {
     background-image: url("img/knowing_sm.jpg");
@@ -549,21 +557,18 @@ div.sectionContent.footer p {
     background-position: center top;
 }
 
-
-
 .background.westminster,
 .background.kadote {
     background-position: 75% center;
 }
-
 .background.aruarian {
+
     background-position: 30% center;
 }
-
 .background.anubis {
     background-position: 80% 25%;
 }
 
-.background.kathid {
+.background.kathid {    
     background-position: 90% 35%;
 }

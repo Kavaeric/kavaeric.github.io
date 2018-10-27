@@ -57,7 +57,7 @@ div.header {
     padding: 0;
 
     display: grid;
-    grid-template-columns: 45% auto;
+    grid-template-columns: 50% auto;
     grid-template-rows: 100%;
     grid-template-areas: "strip content";
 }
@@ -517,14 +517,9 @@ div.sectionContent.footer p {
 /* Images - previously part of images.css */
 
 .background {
-    background-size: cover;
+    background-size: auto 100vh;
     background-position: 40% center; /* The background image needs to be offset to the right due to the 1:1 layout */
-}
-
-@supports (background-attachment: fixed) {
-    .background {
-        background-attachment: fixed;
-    }
+    background-attachment: fixed;
 }
 
 
@@ -550,9 +545,7 @@ div.sectionContent.footer p {
 }
 
 @media only screen and (min-width: 768px) {
-    @supports (background-attachment: fixed) {
-        .background.knowing { background-image: url("img/knowing_b.png")}
-    }
+    .background.knowing { background-image: url("img/knowing_b.png")}
     .background.sharpbackground.knowing { background-image: url("img/knowing.jpg"); }
 }
 

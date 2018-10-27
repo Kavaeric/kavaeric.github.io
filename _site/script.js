@@ -3,6 +3,10 @@
 // Keep track of the current image, identified by its class
 var currentClass = 'knowing';
 
+// Ratio of showcase image
+// Knowing is 1.6
+var showcaseRatio = 1.6;
+
 // List of names of images
 var imageTitles = {
     'knowing' : '"Knowing" 2017',
@@ -17,7 +21,15 @@ var imageTitles = {
     'aruarian': '"Aruarian" 2016',
     'kathid': '"Follow" 2018',
     'anubis': '"Silence" 2018'
-  };
+};
+
+function calcRatio() {
+    // Calculate image ratio so that background sizing function works better
+    var showcaseImage = new Image();
+    showcaseImage.src = $('#' + currentClass).css('background-image').split(/"/)[1];
+    showcaseRatio = showcaseImage.width / showcaseImage.height;
+    console.log(showcaseRatio);
+}
 
 var setImage = function(clickedButton) {
     // Get the needed class from the ID of the button
@@ -32,8 +44,8 @@ var setImage = function(clickedButton) {
     // Change header text
     $('#headerText').text(imageTitles[newClass]);
 
-    // Don't follow the clicked link
-    event.preventDefault();
+    // Calculate new image ratio
+    calcRatio();
 };
 
 // Show/hide header sidebar
@@ -48,6 +60,17 @@ function toggleHeaderStrip() {
 
 };
 
+function adjustBackgroundCover() {
+    console.log("adjusting");
+
+    var windowRatio = $(window).width() / $(window).height();
+
+    if (windowRatio > showcaseRatio) {
+        $('.background').css('background-size', '100vw auto');
+    } else {
+        $('.background').css('background-size', 'auto 100vh');
+    }
+}
 
 // Wait until the document is done loading
 $(document).ready(function() {
@@ -61,18 +84,19 @@ $(document).ready(function() {
             return;
         }
 
-        $('<style> #' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
-        +'.background.' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
-        +'.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '_sm.jpg"); }'
-        +''
-        +'@media only screen and (min-width: 768px) {'
+        $('<style>'
+        + '#' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
+        + '.background.' + imageName + ' { background-image: url("img/' + imageName + '_smb.png"); }'
+        + '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '_sm.jpg"); }'
+        + ''
+        + '@media only screen and (min-width: 768px) {'
         +    '.background.' + imageName + ' { background-image: url("img/' + imageName + '_b.png"); }'
         +    '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '.jpg"); }'
-        +'}'
-        +''
-        +'@media only screen and (min-width: 1280px) {'
+        + '}'
+        + ''
+        + '@media only screen and (min-width: 1280px) {'
         +    '.background.sharpbackground.' + imageName + ' { background-image: url("img/' + imageName + '.jpg"); }'
-        +'}</style>').appendTo('head');
+        + '}</style>').appendTo('head');
     });
 
     // Unhide the image selection buttons
@@ -85,4 +109,10 @@ $(document).ready(function() {
     $('div.headerButtons > a.button').on('click', function() {
         setImage( $(this) )
     });
- }); 
+
+    adjustBackgroundCover();
+}); 
+
+$( window ).resize(function() {
+    adjustBackgroundCover();
+});
