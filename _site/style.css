@@ -517,10 +517,9 @@ div.sectionContent.footer p {
 /* Images - previously part of images.css */
 
 .background {
-    background-size: auto 100vh;
-    /*background-position: 40% center; /* The background image needs to be offset to the right due to the 1:1 layout */
+    background-size: cover;
+    background-position: 40% center; /* The background image needs to be offset to the right due to the 1:1 layout */
     background-attachment: fixed;
-    background-position: center;
 }
 
 
@@ -532,21 +531,11 @@ div.sectionContent.footer p {
 
 /* Knowing (skyline) - the default image */
 /* This will load before the script.js */
-#knowing {
-    background-image: url("img/knowing_smb.png");
-}
-
-@supports (background-attachment: fixed) {
-    .background.knowing {
-        background-image: url("img/knowing_smb.png");
-    }
-}
 .background.sharpbackground.knowing {
     background-image: url("img/knowing_sm.jpg");
 }
 
 @media only screen and (min-width: 768px) {
-    .background.knowing { background-image: url("img/knowing_b.png")}
     .background.sharpbackground.knowing { background-image: url("img/knowing.jpg"); }
 }
 
@@ -554,7 +543,6 @@ div.sectionContent.footer p {
     .background.sharpbackground.knowing { background-image: url("img/knowing.jpg"); }
 }
 
-/*
 .background.armour {
     background-position: center top;
 }
@@ -574,4 +562,3 @@ div.sectionContent.footer p {
 .background.kathid {    
     background-position: 90% 35%;
 }
-*/
