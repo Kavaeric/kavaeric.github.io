@@ -518,8 +518,9 @@ div.sectionContent.footer p {
 
 .background {
     background-size: auto 100vh;
-    background-position: 40% center; /* The background image needs to be offset to the right due to the 1:1 layout */
+    /*background-position: 40% center; /* The background image needs to be offset to the right due to the 1:1 layout */
     background-attachment: fixed;
+    background-position: center;
 }
 
 
@@ -553,6 +554,7 @@ div.sectionContent.footer p {
     .background.sharpbackground.knowing { background-image: url("img/knowing.jpg"); }
 }
 
+/*
 .background.armour {
     background-position: center top;
 }
@@ -572,3 +574,4 @@ div.sectionContent.footer p {
 .background.kathid {    
     background-position: 90% 35%;
 }
+*/
