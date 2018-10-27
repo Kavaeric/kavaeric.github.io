@@ -74,7 +74,7 @@ div.header > div.headerStrip {
     justify-content: center;
 
     color: #000;
-    background-color: #eee;
+    background-color: rgba(238, 238, 238, .9); /* For mobile browsers. Changed to opaque through JS detection */
 }
 
 div.header > div.headerStrip > img {
@@ -145,7 +145,7 @@ div.header > div.headerStrip > div.headerButtons a.button {
 
 div.header > div.headerStrip a.button:hover,
 div.header > div.headerStrip a.button:focus {
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, .9);
 }
 
 div.header > div.headerStrip a.button:active {
@@ -169,7 +169,7 @@ div.header > div.headerStrip a.button:active {
     text-align: center;
     line-height: 10em;
     color: #000;
-    background-color: #eee;
+    background-color: rgba(238, 238, 238, .8); /* For mobile browsers. Changed to opaque through JS detection */
 }
 
 @media only screen and (min-width: 640px) {
