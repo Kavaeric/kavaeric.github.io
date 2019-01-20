@@ -7,6 +7,9 @@ var currentClass = 'knowing';
 var imageTitles = {
     'knowing' : '"Knowing" 2017',
     'ascend' : '"Ascend" 2018',
+    'rhea' : '"Rhea" 2019',
+    'visor' : '"Terran visor helmet" 2018',
+    'cruise' : '"Drift" 2018',
     'vancouver' : '"Vancouver 717" 2018',
     'content': '"Content" 2018',
     'westminster': '"Westminster 717" 2017',
