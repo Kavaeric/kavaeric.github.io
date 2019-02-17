@@ -62,6 +62,7 @@ $(document).ready(function() {
 
         var imageName = $(this).attr('id');
 
+        // Mobile browsers will not have the frosted glass appearance
         if (window.mobileCheck()) {
             console.log("Mobile browser detected");
             $('<style>'
