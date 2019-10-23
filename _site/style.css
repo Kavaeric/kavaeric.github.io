@@ -194,10 +194,6 @@ div.header > div.headerStrip a.button:active {
 }
 
 @media only screen and (min-width: 1280px) {
-    body {
-        font-size: 1.2em;
-    }
-    
     /* At desktop sizes we can add margins */
     div.header {
         grid-template-columns: 3em 25em auto;
