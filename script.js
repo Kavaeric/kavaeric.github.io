@@ -7,7 +7,7 @@ var currentClass = 'knowing';
 var imageTitles = {
     'knowing' : '"Knowing" 2017',
     'ascend' : '"Ascend" 2018',
-    'rhea' : '"Rhea" 2019',
+    'breathless' : '"Breathless" 2019',
     'visor' : '"Terran visor helmet" 2018',
     'cruise' : '"Drift" 2018',
     'vancouver' : '"Vancouver 717" 2018',
@@ -15,7 +15,7 @@ var imageTitles = {
     'westminster': '"Westminster 717" 2017',
     'gate': '"Gate" 2017',
     'momentum': '"Momentum" 2016',
-    'kadote': 'Triton Kadote model, 2016',
+    'cona': '"CM Cona II", 2019',
     'armour': '"Terran Shock Armour" 2018',
     'aruarian': '"Aruarian" 2016',
     'kathid': '"Follow" 2018',
