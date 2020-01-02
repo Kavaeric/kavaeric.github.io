@@ -533,11 +533,11 @@ div.sectionContent.footer p {
 }
 
 @media only screen and (min-width: 768px) {
-    .background.sharpbackground.knowing { background-image: url("img/rheasky.jpg"); }
+    .background.sharpbackground.rheasky { background-image: url("img/rheasky.jpg"); }
 }
 
 @media only screen and (min-width: 1280px) {
-    .background.sharpbackground.knowing { background-image: url("img/rheasky.jpg"); }
+    .background.sharpbackground.rheasky { background-image: url("img/rheasky.jpg"); }
 }
 
 .background.armour {
