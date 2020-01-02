@@ -528,16 +528,16 @@ div.sectionContent.footer p {
 
 /* Knowing (skyline) - the default image */
 /* This will load before the script.js */
-.background.sharpbackground.knowing {
-    background-image: url("img/knowing_sm.jpg");
+.background.sharpbackground.rheasky {
+    background-image: url("img/rheasky_sm.jpg");
 }
 
 @media only screen and (min-width: 768px) {
-    .background.sharpbackground.knowing { background-image: url("img/knowing.jpg"); }
+    .background.sharpbackground.knowing { background-image: url("img/rheasky.jpg"); }
 }
 
 @media only screen and (min-width: 1280px) {
-    .background.sharpbackground.knowing { background-image: url("img/knowing.jpg"); }
+    .background.sharpbackground.knowing { background-image: url("img/rheasky.jpg"); }
 }
 
 .background.armour {
