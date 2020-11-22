@@ -1,0 +1,9 @@
+- First image should be slightly larger than 1080p
+- Small image should be 1400px wide or less
+
+- Blurred images are 50% opacity
+- Large blur image is 480px wide or less
+- Small blur image is 288px wide or less
+
+- Online image compression tools can help to reduce size but is not necessary
+- Total image size of each entry should be 1MB or less

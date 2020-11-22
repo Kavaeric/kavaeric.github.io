@@ -6,20 +6,21 @@ var currentClass = 'knowing';
 // List of names of images
 // The left string should be the name of the image file. It will be used for the CSS class
 // Don't forget to edit the button IDs of index.html
+// Also don't forget to change the default in style.css
 var imageTitles = {
-    'rheasky' : '"Far Sky" 2019',
+    'theview': '"The View" 2020',
+    'ancom' : '"The Ancom Way" 2020',
     'ascend' : '"Ascend" 2018',
     'breathless' : '"Breathless" 2019',
-    'visor' : '"Terran visor helmet" 2018',
     'cruise' : '"Drift" 2018',
-    'crossfox' : '"Cross Pursuit" 2019',
+    'venture' : '"The Venture" 2020',
+    'refusal' : '"The Refusal" 2020',
     'mentu': '"Mentu" 2019',
     'westminster': '"Westminster 717" 2017',
-    'gate': '"Gate" 2017',
+    'kavref': '"Kavaeric Refsheet" 2020',
     'stoplight': '"Impaled" 2019',
     'cona': '"CM Cona II", 2019',
     'armour': '"Terran Shock Armour" 2018',
-    'aruarian': '"Aruarian" 2016',
     'kathid': '"Follow" 2018',
     'anubis': '"Silence" 2018'
 };

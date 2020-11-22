@@ -1,0 +1,10 @@
+Follow this
+https://jekyllrb.com/docs/
+
+Might have to reinstall Ruby using the Windows installer
+https://www.ruby-lang.org/en/downloads/
+
+Also ensure that github-pages gem is installed by using
+gem install github-pages
+
+To locally test the server, right click > git bash here, then type "bundle exec jekyll serve"

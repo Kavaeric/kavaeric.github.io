@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640"><defs><path d="M0 520L0 120L640 120L640 520L0 520ZM315.93 386.67L60 222.48L60 466.67L580 466.67L580 216.22L316.75 385.1L315.93 386.67ZM315.12 309.17L526.86 173.33L103.37 173.33L315.12 309.17Z" id="d4f24gQSX6"></path></defs><g><g><g><use xlink:href="#d4f24gQSX6" opacity="1" fill="#ffffff" fill-opacity="1"></use></g></g></g></svg>
+<svg width="100%" height="100%" viewBox="0 0 640 640" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <path id="d4f24gQSX6" d="M0,520L0,120L640,120L640,520L0,520ZM315.12,309.17L526.86,173.33L103.37,173.33L315.12,309.17Z" style="fill:white;fill-rule:nonzero;"/>
+    </g>
+</svg>

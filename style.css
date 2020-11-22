@@ -526,18 +526,20 @@ div.sectionContent.footer p {
     }
 }
 
-/* Knowing (skyline) - the default image */
-/* This will load before the script.js */
-.background.sharpbackground.rheasky {
-    background-image: url("img/rheasky_sm.jpg");
+/* The default image */
+/* This will load before the script.js, and will also be what is on display if JS is disabled */
+/* The default class is also defined in the html file, as a class */
+/* Default description (title of the piece, year) also has to be edited in the html */
+.background.sharpbackground.theview {
+    background-image: url("img/theview.jpg");
 }
 
 @media only screen and (min-width: 768px) {
-    .background.sharpbackground.rheasky { background-image: url("img/rheasky.jpg"); }
+    .background.sharpbackground.theview { background-image: url("img/theview.jpg"); }
 }
 
 @media only screen and (min-width: 1280px) {
-    .background.sharpbackground.rheasky { background-image: url("img/rheasky.jpg"); }
+    .background.sharpbackground.theview { background-image: url("img/theview.jpg"); }
 }
 
 .background.armour {
