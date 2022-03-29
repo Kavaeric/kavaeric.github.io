@@ -436,6 +436,9 @@ div.linkGrid a.button:active {
 a.button#ArtStation {
     background-image: url("/svg/icon_artstation.svg");
 }
+a.button#Flickr {
+    background-image: url("/svg/icon_flickr.svg");
+}
 a.button#Twitter {
     background-image: url("/svg/icon_twitter.svg");
 }
@@ -454,9 +457,6 @@ a.button#Instagram {
 a.button#Patreon {
     background-image: url("/svg/icon_patreon.svg");
 }
-a.button#FurryNetwork {
-    background-image: url("/svg/icon_furrynetwork.svg");
-}
 a.button#RedBubble {
     background-image: url("/svg/icon_redbubble.svg");
 }
@@ -471,6 +471,9 @@ a.button#Telegram {
 }
 a.button#Email {
     background-image: url("/svg/icon_email.svg");
+}
+a.button#Etsy {
+    background-image: url("/svg/icon_etsy.svg");
 }
 a.button#Kofi {
     background-image: url("/svg/icon_kofi.svg");
