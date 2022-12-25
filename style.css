@@ -454,6 +454,9 @@ a.button#Mastodon {
 a.button#Instagram {
     background-image: url("/svg/icon_insta.svg");
 }
+a.button#Instagram {
+    background-image: url("/svg/icon_bandcamp.svg");
+}
 a.button#Patreon {
     background-image: url("/svg/icon_patreon.svg");
 }
