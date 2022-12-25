@@ -451,6 +451,9 @@ a.button#FurAffinity {
 a.button#Mastodon {
     background-image: url("/svg/icon_masto.svg");
 }
+a.button#Bandcamp {
+    background-image: url("/svg/icon_bandcamp.svg");
+}
 a.button#Instagram {
     background-image: url("/svg/icon_insta.svg");
 }
