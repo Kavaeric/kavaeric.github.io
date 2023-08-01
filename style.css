@@ -472,6 +472,9 @@ a.button#Refsheet {
 a.button#Tumblr {
     background-image: url("/svg/icon_tumblr.svg");
 }
+a.button#BlueSky {
+    background-image: url("/svg/icon_bsky.svg");
+}
 a.button#Telegram {
     background-image: url("/svg/icon_telegram.svg");
 }
